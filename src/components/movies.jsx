@@ -4,6 +4,7 @@ class Movies extends Component {
   state = {
     movies: getMovies(),
   };
+
   deleteHandler = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
@@ -29,7 +30,8 @@ class Movies extends Component {
                 <button
                   onClick={() => this.deleteHandler(movie)}
                   type="button"
-                  class="btn btn-danger btn-sm">
+                  class="btn btn-danger btn-sm"
+                >
                   Delete
                 </button>
               </td>
