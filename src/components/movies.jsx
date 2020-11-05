@@ -11,7 +11,7 @@ class Movies extends Component {
   };
 
   render() {
-    const count = this.state.movies.length;
+    const { length: count } = this.state.movies;
     if (count === 0) return <p>There is no movies to show</p>;
     return (
       <React.Fragment>
