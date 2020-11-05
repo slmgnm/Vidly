@@ -1,19 +1,21 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { getMovies } from "../services/fakeMovieService";
 class Movies extends Component {
   state = {
     movies: getMovies(),
   };
+
   deleteHandler = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
   };
+
   render() {
-    const { length: count } = this.state.movies;
-    if (count === 0) return <p>there are no movies to show </p>;
+    const count = this.state.movies.length;
+    if (count === 0) return <p>There is no movies to show</p>;
     return (
       <React.Fragment>
-        <p>There are {count} movies </p>
+        <p>you have {count} movies in the list</p>
         <table className="table">
           <thead>
             <th>Title</th>
